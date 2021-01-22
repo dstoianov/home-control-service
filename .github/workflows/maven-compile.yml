@@ -23,3 +23,5 @@ jobs:
             ${{ runner.os }}-maven-
       - name: Compile
         run: ./mvnw --batch-mode compile -DskipTests
+      - name: Package
+        run: ./mvnw --batch-mode package -DskipTests
