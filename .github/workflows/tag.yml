@@ -2,10 +2,12 @@
 # https://github.com/marketplace/actions/github-tag
 
 name: Bump version
+
 on:
   push:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
