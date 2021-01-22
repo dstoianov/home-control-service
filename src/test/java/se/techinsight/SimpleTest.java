@@ -8,4 +8,8 @@ class SimpleTest {
     void nameName() {
 //    fake test
     }
+
+    @Test
+    void addedMoreTest() {
+    }
 }
