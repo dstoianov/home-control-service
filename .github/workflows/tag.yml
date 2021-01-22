@@ -1,3 +1,6 @@
+# documentation
+# https://github.com/marketplace/actions/github-tag
+
 name: Bump version
 on:
   push:
