@@ -32,4 +32,4 @@ jobs:
           git-release-bot-name: "release-bot"
           git-release-bot-email: "release-bot@github.com"
           access-token: ${{ secrets.GITHUB_TOKEN }}
-          skip-perform: false
+#          skip-perform: false
