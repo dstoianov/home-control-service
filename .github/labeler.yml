@@ -1,0 +1,15 @@
+# Add 'repo' label to any root file changes
+workflows:
+  - .github/**/*
+
+# Add 'repo' label to any root file changes
+repo:
+  - ./*
+
+# Add 'unitTests' label to any change within the 'UnitTests' package
+tests:
+  - src/test/**/*
+
+documentation:
+  - "**/*.md"
+  - "**/*.adoc"
