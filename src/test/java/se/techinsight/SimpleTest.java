@@ -12,4 +12,8 @@ class SimpleTest {
     @Test
     void addedMoreTest() {
     }
+
+    @Test
+    void testNumber3() {
+    }
 }
