@@ -6,12 +6,19 @@ workflows:
 repo:
   - ./*
 
+frontend:
+  - any: [ '*.html', '*.js', '*.css' ]
+
+config:
+  - any: [ '*.yml', '*.properties', '*.xml' ]
+
+wsdl:
+  - any: [ '*.wsdl' ]
+
 # Add 'unitTests' label to any change within the 'UnitTests' package
 test:
   - src/test/**/*
 
 documentation:
-  - "**/*.md"
-  - "**/*.adoc"
-  - "*.md"
-  - "*.adoc"
+  - any: [ '*.md', '*.adoc' ]
+
