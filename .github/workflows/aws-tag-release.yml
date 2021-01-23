@@ -73,4 +73,4 @@ jobs:
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
       - name: Log out of Amazon ECR
         if: always()
-          run: docker logout ${{ steps.login-ecr.outputs.registry }}
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
