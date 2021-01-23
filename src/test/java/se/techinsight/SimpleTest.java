@@ -24,4 +24,8 @@ class SimpleTest {
     @Test
     void oneMoreFakeTest() {
     }
+
+    @Test
+    void oneMoreFakeTest2() {
+    }
 }
