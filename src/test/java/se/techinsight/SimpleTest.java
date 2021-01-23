@@ -20,4 +20,8 @@ class SimpleTest {
     @Test
     void testNumber4() {
     }
+
+    @Test
+    void oneMoreFakeTest() {
+    }
 }
