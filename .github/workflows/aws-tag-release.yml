@@ -67,7 +67,8 @@ jobs:
           ./mvnw spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=${{ env.service-name }}
           docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA_SHORT
-          docker tag $ECR_REPOSITORY:${{ steps.tag_version.outputs.new_tag }} $ECR_REGISTRY/$ECR_REPOSITORY:${{ steps.tag_version.outputs.new_tag }}
+          docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:${{ steps.tag_version.outputs.new_tag }}
+          docker image ls
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA_SHORT
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:${{ steps.tag_version.outputs.new_tag }}
