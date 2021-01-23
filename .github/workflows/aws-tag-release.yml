@@ -33,7 +33,7 @@ jobs:
         uses: mathieudutour/github-tag-action@v5.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          #          default_bump: patch
+          #default_bump: patch
           default_bump: minor
           create_annotated_tag: true
       - name: Create a GitHub release
@@ -53,24 +53,22 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-      - name: Build, tag, and push image to Amazon ECR
+      - name: Build docker image
+        run: |
+          # Build a docker container
+          ./mvnw spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=${{ env.service-name }}
+      - name: Tag and push image to Amazon ECR
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{ env.service-name }}
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: ${{ steps.tag_version.outputs.new_tag }}
         run: |
-          # Build a docker container and
-          # push it to ECR so that it can
-          # be deployed to ECS.
-          GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-8)
-          ./mvnw spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=${{ env.service-name }}
+          # push image to ECR so that it can be deployed to ECS.
           docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA_SHORT
           docker tag $ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:${{ steps.tag_version.outputs.new_tag }}
           docker image ls
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA_SHORT
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:${{ steps.tag_version.outputs.new_tag }}
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
       - name: Log out of Amazon ECR
