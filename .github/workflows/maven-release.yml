@@ -19,9 +19,7 @@ jobs:
       #          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
       #          restore-keys: ${{ runner.os }}-m2
       - name: Maven Release Clean
-        run: |
-        ./mvnw -B clean
-        ./mvnw -B release:clean
+        run: ./mvnw -B clean release:clean
       - name: Release with Maven
         uses: qcastel/github-actions-maven-release@v1.12.5
         with:
