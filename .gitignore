@@ -35,4 +35,5 @@ build/
 
 # produced by maven release plugin
 pom.xml.releaseBackup
+pom.xml.versionsBackup
 release.properties
