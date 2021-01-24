@@ -11,7 +11,7 @@
 
     <groupId>se.techinsight</groupId>
     <artifactId>home-control-service</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2-SNAPSHOT</version>
 
     <name>home-control-service</name>
     <description>Demo project for Spring Boot</description>
@@ -99,7 +99,7 @@
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
         <url>git@github.com:dstoianov/home-control-service.git</url>
-        <tag>v1.2.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
