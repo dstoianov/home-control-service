@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     if: (!contains(github.event.head_commit.message, '[ci skip]') || !contains(github.event.head_commit.message, '[skip ci]'))
     env:
-      service-name: fedex-service
+#      service name and AWS ECR repo name expected to be the same!!!
+      service-name: test-service
 
     steps:
       - name: Checkout

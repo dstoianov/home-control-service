@@ -1,3 +1,5 @@
+# https://github.com/marketplace/actions/labeler?version=v3
+# all labels must exist or create manually earlier
 # Add 'repo' label to any root file changes
 workflows:
   - .github/**/*
@@ -7,18 +9,18 @@ repo:
   - ./*
 
 frontend:
-  - any: [ '*.html', '*.js', '*.css' ]
+  - any: [ 'src/**/*.html', 'src/**/*.js', 'src/**/*.css' ]
 
 config:
-  - any: [ '*.yml', '*.properties', '*.xml' ]
+  - any: [ 'src/**/*.yml', 'src/**/*.properties', 'src/**/*.xml' ]
 
 wsdl:
-  - any: [ '*.wsdl' ]
+  - any: [ 'src/**/*.wsdl' ]
 
-# Add 'unitTests' label to any change within the 'UnitTests' package
 test:
   - src/test/**/*
 
 documentation:
-  - any: [ '*.md', '*.adoc' ]
+  - '*.md'
+  - '*.adoc'
 
