@@ -85,12 +85,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!--            <plugin>-->
-            <!--                <artifactId>maven-release-plugin</artifactId>-->
-            <!--                <configuration>-->
-            <!--                    <scmCommentPrefix>[ci skip]</scmCommentPrefix>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <scmCommentPrefix>[ci skip]</scmCommentPrefix>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
