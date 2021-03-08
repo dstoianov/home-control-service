@@ -1,1 +1,29 @@
+spring:
+  application:
+    name: @project.artifactId@
+  datasource:
+    url: jdbc:mysql://192.168.178.100:3306/expencies
+    username: "expencies_db_user"
+    password: "expencies_db_password"
+  #  liquibase:
+  #    enabled: true
+  #    url: jdbc:mysql://${DB_HOSTNAME}:${DB_PORT}/${DB_NAME}
+  #    user: ${LIQUIBASE_USERNAME}
+  #    password: ${LIQUIBASE_PASSWORD}
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  thymeleaf:
+    cache: false
+
+
+logging:
+  level:
+    .: ERROR
+    org.springframework.web: INFO
+    se.techinsight: DEBUG
+#  pattern:
+#    console: "%d{yyyy-MM-dd'T'HH:mm:ss.SSS'Z', UTC} [trace_id=%X{X-B3-TraceId} span_id=%X{X-B3-SpanId} trace_sampled=%X{X-Span-Export}] %X{custom-metadata-context:--} %-5level %t %-40.40logger{39} : %msg%ex%n"
 

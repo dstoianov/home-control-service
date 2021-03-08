@@ -11,5 +11,18 @@
 
 <p th:text="'Hello, ' + ${name} + '!'"></p>
 
+
+<div>
+    <form th:method="POST" th:action="@{/add-new}" th:object="${record}">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" th:field="*{name}">
+
+            <br>
+            <input type="submit" value="Add record">
+        </div>
+    </form>
+</div>
+
 </body>
 </html>

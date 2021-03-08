@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:include="fragments/layout">
+
+<body>
+
+<div id="main" th:fragment="content">
+    <div class="container">
+        <div class="card">
+
+            <table>
+                <thead>
+                <tr>
+                    <th> Id</th>
+                    <th> Category Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${categories.empty}">
+                    <td colspan="2"> No Categories Available</td>
+                </tr>
+                <tr th:each="category : ${categories}">
+                    <td><a th:href="@{('~/category/' + ${category.id})}" th:text="${category.id}"> id </a></td>
+                    <td><span th:text="${category.name}"> Name </span></td>
+                </tr>
+                </tbody>
+
+            </table>
+
+            <p>
+                <a class="btn btn-primary" th:href="@{~/category/new}">Add new Category</a>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

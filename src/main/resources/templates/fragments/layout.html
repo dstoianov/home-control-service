@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.3/css/bootstrap.min.css"/>
+    <!--    <link rel="stylesheet" th:href="@{/css/main.css}"/>-->
+
+    <link rel="icon" th:href="@{/img/favicon.ico}" href="favicon.ico"/>
+
+    <title>App</title>
+
+</head>
+<body>
+
+<div th:replace="this :: content">content goes here</div>
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+
+</html>
