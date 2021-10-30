@@ -9,15 +9,13 @@
             <div>
                 <div class="form-group">
                     <label for="name">Category Name</label>
-                    <input id="id" type="hidden" th:field="*{id}">
-                    <input id="name" type="text" class="form-control" th:field="*{name}" required>
+                    <input id="name" class="form-control" type="text" th:field="*{name}" required
+                           placeholder="Category name">
                 </div>
                 <a class="btn btn-secondary" th:href="@{~/category}">Cancel</a>
-                <button type="submit" class="btn btn-primary">Save</button>
-
+                <button type="submit" class="btn btn-primary">Add category</button>
             </div>
         </form>
-
     </div>
 </div>
 

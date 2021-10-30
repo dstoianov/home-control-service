@@ -26,13 +26,13 @@ public class CategoryController {
         return "category/list";
     }
 
-    @GetMapping("/new")
+    @GetMapping("/add")
     public String categoryAdd(Model model) {
         model.addAttribute("category", new CategoryDto());
-        return "category/new";
+        return "category/add";
     }
 
-    @PostMapping("/new")
+    @PostMapping("/add")
     public String addRecord(@ModelAttribute @Valid CategoryDto category, Model model) {
         categoryService.save(category);
         return "redirect:/category";

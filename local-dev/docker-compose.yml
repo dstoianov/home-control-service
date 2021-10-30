@@ -1,0 +1,19 @@
+# This will be replaced later when Garden is configured.
+# https://raisin-jira.atlassian.net/browse/DB-92
+# do not forget to login
+# $(aws ecr get-login --no-include-email --region eu-central-1)
+
+version: "3.8"
+
+services:
+
+  database-brokerage-communication-service:
+    image: mysql:5.7.29
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=expencies
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_USER=expencies_db_user
+      - MYSQL_PASSWORD=mq3XuLjW8AB2MeZ6AiFvo93fnbjDGFWx
+
